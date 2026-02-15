@@ -44,16 +44,14 @@ async function getSymbolCounts(): Promise<Record<string, number>> {
 
 export async function GET() {
   try {
-    const [marketTotal, expTotal, trainTotal, bySymbol] = await Promise.all([
+    const [marketTotal, trainTotal, bySymbol] = await Promise.all([
       getCollectionCount("market_data"),
-      getCollectionCount("experiences"),
       getCollectionCount("training_experiences"),
       getSymbolCounts(),
     ]);
 
     return NextResponse.json({
       market_data: { total: marketTotal, bySymbol },
-      experiences: { total: expTotal },
       training_experiences: { total: trainTotal },
       healthy: true,
     });
@@ -61,7 +59,6 @@ export async function GET() {
     return NextResponse.json(
       {
         market_data: { total: 0, bySymbol: {} },
-        experiences: { total: 0 },
         training_experiences: { total: 0 },
         healthy: false,
         error: e instanceof Error ? e.message : "Stats fetch failed",

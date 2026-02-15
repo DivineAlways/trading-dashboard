@@ -1,7 +1,5 @@
 export interface PBRecord {
   id: string;
-  created: string;
-  updated: string;
   collectionId: string;
   collectionName: string;
 }
@@ -25,25 +23,27 @@ export interface MarketDataRecord extends PBRecord {
   volume: number;
 }
 
-export interface ExperienceRecord extends PBRecord {
-  symbol: string;
-  strategy: "ICC" | "Mean_Reversion" | "Green_Wall";
-  action: string;
-  reward: number;
-  pnl: number;
-  entry_price: number;
-  exit_price: number;
-  duration_hours: number;
-  narrative: string;
+export interface MarketState {
+  atr: number;
+  close: number;
+  high: number;
+  hl_range: number;
+  is_news: boolean;
+  low: number;
+  open: number;
+  real_volume: number;
+  spread: number;
+  tick_volume: number;
+  time: string;
 }
 
 export interface TrainingExperienceRecord extends PBRecord {
   symbol: string;
-  strategy: "ICC" | "Mean_Reversion" | "Green_Wall";
-  action: Record<string, unknown>;
+  strategy: string;
+  action: { type: string };
   reward: number;
-  state: Record<string, unknown>;
-  next_state: Record<string, unknown>;
+  state: MarketState;
+  next_state: MarketState;
   done: boolean;
 }
 
@@ -63,7 +63,6 @@ export interface CollectionStats {
 
 export interface StatsResponse {
   market_data: { total: number; bySymbol: Record<string, number> };
-  experiences: { total: number };
   training_experiences: { total: number };
   healthy: boolean;
 }

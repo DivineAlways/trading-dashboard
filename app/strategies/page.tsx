@@ -5,7 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { STRATEGIES, REWARD_RULES } from "@/lib/constants";
 import { usePolling } from "@/lib/hooks/use-polling";
-import { PBList, ExperienceRecord } from "@/lib/types";
+import { PBList, TrainingExperienceRecord } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import { Skeleton } from "@/components/ui/skeleton";
 
@@ -16,7 +16,7 @@ const ICC_PHASES = [
 ];
 
 export default function StrategiesPage() {
-  const { data: expData, loading } = usePolling<PBList<ExperienceRecord>>(
+  const { data: expData, loading } = usePolling<PBList<TrainingExperienceRecord>>(
     "/api/pocketbase/experiences?perPage=200",
     30000
   );
@@ -243,14 +243,16 @@ export default function StrategiesPage() {
                     <div className="flex items-center gap-2">
                       <span className="font-mono text-xs">{trade.symbol}</span>
                       <span className="text-xs text-muted-foreground">
-                        {new Date(trade.created).toLocaleString(undefined, {
-                          month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
-                        })}
+                        {trade.state?.time
+                          ? new Date(trade.state.time).toLocaleString(undefined, {
+                              month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
+                            })
+                          : "\u2014"}
+                      </span>
+                      <span className="text-xs font-mono text-muted-foreground">
+                        {trade.action?.type || ""}
                       </span>
                     </div>
-                    {trade.narrative && (
-                      <p className="text-xs text-muted-foreground mt-0.5 truncate">{trade.narrative}</p>
-                    )}
                   </div>
                   <span
                     className={cn(

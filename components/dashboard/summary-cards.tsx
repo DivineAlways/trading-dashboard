@@ -14,10 +14,10 @@ interface SummaryCardsProps {
 export function SummaryCards({ totalTrades, totalReward, winRate, healthy }: SummaryCardsProps) {
   const cards = [
     {
-      title: "Total Trades",
-      value: totalTrades.toString(),
+      title: "Total Episodes",
+      value: totalTrades.toLocaleString(),
       icon: Activity,
-      description: "Closed trades",
+      description: "Training experiences",
     },
     {
       title: "Total Reward",

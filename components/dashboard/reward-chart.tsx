@@ -2,7 +2,7 @@
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from "recharts";
-import { ExperienceRecord } from "@/lib/types";
+import { TrainingExperienceRecord } from "@/lib/types";
 
 const COLORS: Record<string, string> = {
   ICC: "hsl(263, 70%, 50%)",
@@ -10,7 +10,7 @@ const COLORS: Record<string, string> = {
   Green_Wall: "hsl(145, 60%, 40%)",
 };
 
-export function RewardChart({ trades }: { trades: ExperienceRecord[] }) {
+export function RewardChart({ trades }: { trades: TrainingExperienceRecord[] }) {
   const byStrategy: Record<string, number> = {};
   for (const t of trades) {
     byStrategy[t.strategy] = (byStrategy[t.strategy] || 0) + (t.reward || 0);

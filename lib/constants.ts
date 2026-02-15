@@ -1,13 +1,13 @@
 export const SYMBOLS = [
-  { name: "EUR_USD", label: "EUR/USD", type: "forex" as const, isLive: true },
-  { name: "GBP_USD", label: "GBP/USD", type: "forex" as const, isLive: true },
-  { name: "USD_JPY", label: "USD/JPY", type: "forex" as const, isLive: true },
-  { name: "XAU_USD", label: "XAU/USD", type: "commodity" as const, isLive: true },
-  { name: "BTC_USD", label: "BTC/USD", type: "crypto" as const, isLive: false },
-  { name: "OIL_USD", label: "OIL/USD", type: "commodity" as const, isLive: false },
-  { name: "SPX500_USD", label: "S&P 500", type: "index" as const, isLive: false },
-  { name: "US30_USD", label: "Dow 30", type: "index" as const, isLive: false },
-  { name: "NAS100_USD", label: "NASDAQ 100", type: "index" as const, isLive: false },
+  { name: "EUR_USD", label: "EUR/USD", type: "forex" as const, isLive: true, trainingName: "EURUSD" },
+  { name: "GBP_USD", label: "GBP/USD", type: "forex" as const, isLive: true, trainingName: "GBPUSD" },
+  { name: "USD_JPY", label: "USD/JPY", type: "forex" as const, isLive: true, trainingName: "USDJPY" },
+  { name: "XAU_USD", label: "XAU/USD", type: "commodity" as const, isLive: true, trainingName: "XAUUSD" },
+  { name: "BTC_USD", label: "BTC/USD", type: "crypto" as const, isLive: false, trainingName: "BTCUSD" },
+  { name: "OIL_USD", label: "OIL/USD", type: "commodity" as const, isLive: false, trainingName: "OILUSD" },
+  { name: "SPX500_USD", label: "S&P 500", type: "index" as const, isLive: false, trainingName: "SPX500USD" },
+  { name: "US30_USD", label: "Dow 30", type: "index" as const, isLive: false, trainingName: "US30USD" },
+  { name: "NAS100_USD", label: "NASDAQ 100", type: "index" as const, isLive: false, trainingName: "NAS100USD" },
 ];
 
 export const STRATEGIES = [

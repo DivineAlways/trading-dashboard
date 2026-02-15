@@ -31,13 +31,6 @@ export default function DatabasePage() {
       fields: ["symbol", "timeframe", "timestamp", "open", "high", "low", "close", "volume"],
     },
     {
-      name: "experiences",
-      label: "Experiences",
-      icon: Database,
-      total: stats?.experiences?.total || 0,
-      fields: ["symbol", "strategy", "action", "reward", "pnl", "entry_price", "exit_price", "duration_hours", "narrative"],
-    },
-    {
       name: "training_experiences",
       label: "Training Experiences",
       icon: Database,
@@ -92,7 +85,7 @@ export default function DatabasePage() {
       {/* Collection Cards */}
       {loading ? (
         <div className="grid gap-6 lg:grid-cols-3">
-          {[1, 2, 3].map((i) => (
+          {[1, 2].map((i) => (
             <Skeleton key={i} className="h-[200px]" />
           ))}
         </div>

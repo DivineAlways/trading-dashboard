@@ -220,9 +220,11 @@ export default function TrainingPage() {
                 {experiences.slice(0, 50).map((exp) => (
                   <TableRow key={exp.id}>
                     <TableCell className="text-xs text-muted-foreground">
-                      {new Date(exp.created).toLocaleString(undefined, {
-                        month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
-                      })}
+                      {exp.state?.time
+                        ? new Date(exp.state.time).toLocaleString(undefined, {
+                            month: "short", day: "numeric", hour: "2-digit", minute: "2-digit",
+                          })
+                        : "\u2014"}
                     </TableCell>
                     <TableCell className="font-mono text-xs">{exp.symbol}</TableCell>
                     <TableCell>
