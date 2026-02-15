@@ -38,13 +38,6 @@ export default function StrategiesPage() {
       <div>
         <h1 className="text-2xl font-bold tracking-tight">Strategies</h1>
         <p className="text-sm text-muted-foreground mt-1 max-w-2xl">The AI uses three strategies, each analyzing the market differently. <strong>ICC</strong> follows institutional patterns (big bank footprints). <strong>Mean Reversion</strong> bets extreme prices will revert to average. <strong>Green Wall</strong> uses machine learning to detect momentum shifts. The scoring table below shows how the AI learns — it earns points for good trades and loses points for bad ones.</p>
-        <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-          The AI uses three distinct trading strategies, each looking at the market from a different angle.
-          <strong>ICC</strong> follows institutional patterns (big bank footprints).
-          <strong>Mean Reversion</strong> bets that extreme prices will snap back to normal.
-          <strong>Green Wall</strong> uses machine learning to detect momentum shifts.
-          Below you can see how each strategy is performing and the reward scoring rules.
-        </p>
       </div>
 
       {loading ? (
