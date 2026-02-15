@@ -36,6 +36,7 @@ export default function MarketPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold tracking-tight">Market Data</h1>
+      <p className="text-sm text-muted-foreground mt-1 max-w-2xl">Live price charts powered by TradingView. Select any currency pair or commodity to see real-time price action. This is the same data the AI agents analyze when making trading decisions — you can see exactly what the AI sees.</p>
 
       <Tabs value={symbol} onValueChange={setSymbol}>
         <TabsList className="flex flex-wrap gap-1">

@@ -65,6 +65,7 @@ export default function TrainingPage() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold tracking-tight">AI Training</h1>
+      <p className="text-sm text-muted-foreground mt-1 max-w-2xl">This page tracks the AI's learning journey. Each "episode" is one complete training cycle where the agent observes market data, makes a decision, and receives a reward. Over time, it learns which decisions lead to profit. The charts show reward trends and strategy performance comparisons.</p>
 
       {/* Stats Cards */}
       {loading ? (

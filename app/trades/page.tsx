@@ -48,6 +48,7 @@ export default function TradesPage() {
     <div className="space-y-6">
       <div className="flex items-center justify-between">
         <h1 className="text-2xl font-bold tracking-tight">Trades</h1>
+        <p className="text-sm text-muted-foreground mt-1 max-w-2xl">Every trade the AI makes is logged here — both simulated and live. Each row shows the market (symbol), which strategy was used, when it happened, and the reward score. Green numbers mean profit, red means loss. Use this to review how the AI has been performing over time.</p>
         <div className="flex gap-2">
           <Select value={strategyFilter} onValueChange={setStrategyFilter}>
             <SelectTrigger className="w-[140px] h-8 text-xs">

@@ -44,6 +44,7 @@ export default function DatabasePage() {
   return (
     <div className="space-y-6">
       <h1 className="text-2xl font-bold tracking-tight">Database</h1>
+      <p className="text-sm text-muted-foreground mt-1 max-w-2xl">System health monitor. Shows whether PocketBase (our database) is connected and responding, which data collections exist, and how much experience data the AI has stored. If the status shows red, the database may need to be restarted on the droplet server.</p>
 
       {/* PB Health */}
       <Card className="trading-card">
