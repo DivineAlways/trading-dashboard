@@ -16,7 +16,7 @@ export async function GET(request: NextRequest) {
 
   try {
     const res = await pbFetch(
-      `/api/collections/training_experiences/records?perPage=${perPage}&page=${page}page=${page}sort=-created${filterStr}`
+      `/api/collections/training_experiences/records?perPage=${perPage}&page=${page}&sort=-created${filterStr}`
     );
     const data = await res.json();
     return NextResponse.json(data);
