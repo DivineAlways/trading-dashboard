@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { createChart, ColorType, CrosshairMode } from "lightweight-charts";
+import { createChart, ColorType, CrosshairMode, CandlestickSeries, HistogramSeries } from "lightweight-charts";
 import { CandlestickData } from "@/lib/types";
 
 interface Props {
@@ -30,7 +30,7 @@ export function CandlestickChart({ data, symbol }: Props) {
       height: 500,
     });
 
-    const candleSeries = chart.addCandlestickSeries({
+    const candleSeries = chart.addSeries(CandlestickSeries, {
       upColor: "#26a69a",
       downColor: "#ef5350",
       borderUpColor: "#26a69a",
@@ -48,7 +48,7 @@ export function CandlestickChart({ data, symbol }: Props) {
     })));
 
     if (data.some((d) => d.volume)) {
-      const volumeSeries = chart.addHistogramSeries({
+      const volumeSeries = chart.addSeries(HistogramSeries, {
         priceFormat: { type: "volume" },
         priceScaleId: "volume",
       });
