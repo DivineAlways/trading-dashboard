@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { LayoutDashboard, Brain, ArrowUpDown, GraduationCap, CandlestickChart, Database, ChevronLeft, ChevronRight } from "lucide-react";
+import { LayoutDashboard, Brain, ArrowUpDown, GraduationCap, CandlestickChart, Database, ChevronLeft, ChevronRight, Radio } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 
@@ -13,6 +13,7 @@ const navItems = [
   { href: "/training", icon: GraduationCap, label: "Training" },
   { href: "/market", icon: CandlestickChart, label: "Market" },
   { href: "/database", icon: Database, label: "Database" },
+  { href: "/updates", icon: Radio, label: "Live Updates" },
 ];
 
 export function Sidebar() {
